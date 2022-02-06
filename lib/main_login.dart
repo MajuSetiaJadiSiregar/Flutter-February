@@ -1,0 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:rumahcodingfebruari/view/login_view.dart';
+void main() => runApp(
+    const GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: LoginView()
+    )
+);

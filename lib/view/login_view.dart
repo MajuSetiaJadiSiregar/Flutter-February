@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rumahcodingfebruari/controller/controller.dart';
 import 'package:rumahcodingfebruari/utils/utils.dart';
 import 'package:rumahcodingfebruari/view/register_view.dart';
 
 class LoginView extends StatelessWidget implements handleButton {
-  const LoginView({Key? key}) : super(key: key);
+  LoginView({Key? key}) : super(key: key);
+
+  final LoginController loginController = Get.put(LoginController());
 
   @override
   VoidCallback onPressButton() {
@@ -89,6 +92,7 @@ class LoginView extends StatelessWidget implements handleButton {
               ],
             ),
           ),
+
           Padding(
             padding: const EdgeInsets.all(30.0),
             child: Column(
@@ -114,6 +118,7 @@ class LoginView extends StatelessWidget implements handleButton {
                             border: Border(bottom: BorderSide(color: Colors.grey))
                         ),
                         child: TextField(
+                          controller: loginController.emailEditingController,
                           decoration: InputDecoration(
                               border: InputBorder.none,
                               hintText: "Email or Phone number",
@@ -124,6 +129,7 @@ class LoginView extends StatelessWidget implements handleButton {
                       Container(
                         padding: const EdgeInsets.all(8.0),
                         child: TextField(
+                          controller: loginController.passwordEditingController,
                           decoration: InputDecoration(
                               border: InputBorder.none,
                               hintText: "Password",
@@ -135,7 +141,7 @@ class LoginView extends StatelessWidget implements handleButton {
                   ),
                 ),
                 const SizedBox(height: 30,),
-                UnderstandButtonOop(textButton: "Login", handleButton: onPressButton,),
+                UnderstandButtonOop(textButton: "Login", handleButton: (){loginController.userLogin();},),
                 const SizedBox(height: 30,),
                 UnderstandButtonOop(textButton: "Register", handleButton: onPressButtonRegister,),
                 const SizedBox(height: 70,),

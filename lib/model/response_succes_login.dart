@@ -22,5 +22,17 @@ class ResponseDataUser {
     return ResponseDataUser(id : json["_id"], name : json["name"], email : json["email"]);
   }
 }
+
+
+class ResponseSuccessError{
+  String msg;
+  ResponseSuccessError({required this.msg});
+
+  factory ResponseSuccessError.fromJson(Map<String, dynamic> parsedJson){
+    return ResponseSuccessError(
+        msg: parsedJson['msg'],
+    );
+  }
+}
 //https://medium.com/flutter-community/parsing-complex-json-in-flutter-747c46655f51
 //https://github.com/PoojaB26/ParsingJSON-Flutter/blob/master/lib/model/shape_model.dart

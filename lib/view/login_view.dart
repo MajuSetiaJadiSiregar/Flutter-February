@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rumahcodingfebruari/controller/controller.dart';
+import 'package:rumahcodingfebruari/utils/loading_indicator.dart';
 import 'package:rumahcodingfebruari/utils/utils.dart';
 import 'package:rumahcodingfebruari/view/register_view.dart';
 
@@ -141,7 +142,13 @@ class LoginView extends StatelessWidget implements handleButton {
                   ),
                 ),
                 const SizedBox(height: 30,),
-                UnderstandButtonOop(textButton: "Login", handleButton: (){loginController.userLogin();},),
+                Obx((){
+                  return ElevatedButton(
+                      onPressed: (){loginController.userLogin();},
+                      child: loginController.isLoading.value ? spinkit : const Text('Login'),
+                  );
+                }),
+
                 const SizedBox(height: 30,),
                 UnderstandButtonOop(textButton: "Register", handleButton: onPressButtonRegister,),
                 const SizedBox(height: 70,),

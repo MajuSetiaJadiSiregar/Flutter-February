@@ -4,7 +4,7 @@ class UserService {
 
   static Future<ResponseSuccessLogin> loginUser(String email, String password) async {
     final response = await http.post(
-        Uri.parse("http://10.0.2.2:5000/user/login"),
+        Uri.parse(Envi.endpointLogin),
         headers: <String, String> {
         "Content-Type": "application/json; charset=UTF-8",
         },

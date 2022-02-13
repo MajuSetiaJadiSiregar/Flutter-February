@@ -13,7 +13,7 @@ class LoginController extends GetxController {
       final prefs = await SharedPreferences.getInstance();
       await prefs.setString('token', response.token);
       Get.snackbar("Information", "User ${response.responseDataUser.name} Berhasil Login");
-      Get.off(() => HomePage());
+      Get.to(() => HomePage());
       isLoading.value = !isLoading.value;
 
     }catch(e){

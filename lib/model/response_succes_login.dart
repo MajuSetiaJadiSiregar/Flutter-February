@@ -34,5 +34,5 @@ class ResponseSuccessError{
     );
   }
 }
-//https://medium.com/flutter-community/parsing-complex-json-in-flutter-747c46655f51
+// https://medium.com/flutter-community/parsing-complex-json-in-flutter-747c46655f51
 //https://github.com/PoojaB26/ParsingJSON-Flutter/blob/master/lib/model/shape_model.dart

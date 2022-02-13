@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rumahcodingfebruari/model/response_read_karyawan.dart';
 import 'package:rumahcodingfebruari/services/services.dart';
 import 'package:rumahcodingfebruari/view/home_page.dart';
 import 'package:rumahcodingfebruari/view/register_view.dart';
